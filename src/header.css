@@ -1,0 +1,11 @@
+.header {
+  height: 50px;
+  background: lightblue;
+}
+.header h1 {
+  padding: 15px 25px;
+  color: darkblue;
+  background: inherit;
+  font-family: 'Rowdies', cursive;
+}
+/*# sourceMappingURL=header.css.map */
