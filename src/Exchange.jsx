@@ -1,10 +1,11 @@
 import React from 'react';
 import './exchange.css';
+import BaseCurrency from './BaseCurrency';
 
 const Exchange = () => {
   return (
     <div className='exchange'>
-      <span>Base</span>
+      <BaseCurrency />
       <span>Change</span>
       <span>Target</span>
     </div>
