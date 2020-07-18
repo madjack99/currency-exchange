@@ -2,8 +2,13 @@ import React from 'react';
 import { currencyList, currencyMap } from './config';
 
 const TargetCurrency = () => {
+  const [currencies, setCurrencies] = React.useState([]);
+
   const displayOption = () => {
-    return currencyList.map((currency) => {
+    const currencyListWithoutSelected = currencyList.filter(
+      (currency) => !currencies.includes(currency)
+    );
+    return currencyListWithoutSelected.map((currency) => {
       return (
         <option value={currency} key={currency}>
           {currencyMap[currency]}
@@ -13,7 +18,18 @@ const TargetCurrency = () => {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    setCurrencies([...currencies, e.target.value]);
+  };
+
+  const displaySelectedCurrencies = () => {
+    if (currencies.length) {
+      console.log(currencies);
+      return currencies.map((currency) => {
+        return <li key={currency}>{currencyMap[currency]}</li>;
+      });
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -24,6 +40,7 @@ const TargetCurrency = () => {
           {displayOption()}
         </select>
       </form>
+      <ul>{displaySelectedCurrencies()}</ul>
     </div>
   );
 };
