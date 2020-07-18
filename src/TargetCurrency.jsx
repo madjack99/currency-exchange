@@ -1,7 +1,7 @@
 import React from 'react';
 import { currencyList, currencyMap } from './config';
 
-const BaseCurrency = () => {
+const TargetCurrency = () => {
   const displayOption = () => {
     return currencyList.map((currency) => {
       return (
@@ -18,9 +18,9 @@ const BaseCurrency = () => {
 
   return (
     <div>
-      Please, select base currency
+      Select your target currency
       <form>
-        <select name='base-currency' id='' onChange={handleChange}>
+        <select name='target-currency' id='' onChange={handleChange}>
           {displayOption()}
         </select>
       </form>
@@ -28,4 +28,4 @@ const BaseCurrency = () => {
   );
 };
 
-export default BaseCurrency;
+export default TargetCurrency;

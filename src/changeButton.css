@@ -1,0 +1,14 @@
+.change-button {
+  padding: 10px 15px;
+  margin: 0 20px;
+  border: 0;
+  border-radius: 15px;
+  background: lightblue;
+  color: darkblue;
+  font-family: 'Rowdies', cursive;
+}
+.change-button:hover {
+  background: #86c5da;
+  cursor: pointer;
+}
+/*# sourceMappingURL=changeButton.css.map */
