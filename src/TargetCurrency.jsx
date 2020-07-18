@@ -21,11 +21,24 @@ const TargetCurrency = () => {
     setCurrencies([...currencies, e.target.value]);
   };
 
+  const deleteCurrency = (deletedCurrency) => () => {
+    console.log('delete');
+    const filteredCurrencies = currencies.filter(
+      (currency) => currency !== deletedCurrency
+    );
+    setCurrencies(filteredCurrencies);
+  };
+
   const displaySelectedCurrencies = () => {
     if (currencies.length) {
       console.log(currencies);
       return currencies.map((currency) => {
-        return <li key={currency}>{currencyMap[currency]}</li>;
+        return (
+          <li
+            key={currency}
+            onClick={deleteCurrency(currency)}
+          >{`${currencyMap[currency]}, ${currency}`}</li>
+        );
       });
     } else {
       return null;
