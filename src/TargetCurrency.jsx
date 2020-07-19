@@ -50,6 +50,7 @@ const TargetCurrency = () => {
       Select your target currency
       <form>
         <select name='target-currency' id='' onChange={handleChange}>
+          <option>Choose currency</option>
           {displayOption()}
         </select>
       </form>
