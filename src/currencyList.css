@@ -1,0 +1,15 @@
+form {
+  margin: 10px;
+}
+ul {
+  list-style: none;
+}
+ul li {
+  margin: 5px 0;
+  cursor: pointer;
+}
+p {
+  font-style: italic;
+  color: darkgrey;
+}
+/*# sourceMappingURL=currencyList.css.map */

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { currencyList, currencyMap } from './config';
 import { setBaseCurrency } from './actions/actions';
 
+import './currencyList.css';
+
 const BaseCurrency = () => {
   const dispatch = useDispatch();
   const { baseCurrency } = useSelector((state) => state);

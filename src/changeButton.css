@@ -1,5 +1,5 @@
 .change-button {
-  height: 45px;
+  min-height: 45px;
   padding: 10px 15px;
   margin: 20px;
   border: 0;

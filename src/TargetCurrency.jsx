@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setTargetCurrency } from './actions/actions';
 import { currencyList, currencyMap } from './config';
 
+import './currencyList.css';
+
 const TargetCurrency = () => {
   const dispatch = useDispatch();
   const { targetCurrencyArr, exchangeRate } = useSelector((state) => state);
@@ -59,6 +61,7 @@ const TargetCurrency = () => {
         </select>
       </form>
       <ul>{displaySelectedCurrencies()}</ul>
+      <p>{targetCurrencyArr.length ? 'Click on currency to delete' : ''}</p>
     </div>
   );
 };
