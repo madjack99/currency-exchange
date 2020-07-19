@@ -27,7 +27,6 @@ const TargetCurrency = () => {
   };
 
   const deleteCurrency = (deletedCurrency) => () => {
-    console.log('delete');
     const filteredCurrencies = targetCurrencyArr.filter(
       (currency) => currency !== deletedCurrency
     );
@@ -36,7 +35,6 @@ const TargetCurrency = () => {
 
   const displaySelectedCurrencies = () => {
     if (targetCurrencyArr.length) {
-      console.log(targetCurrencyArr);
       return targetCurrencyArr.map((currency) => {
         return (
           <li key={currency} onClick={deleteCurrency(currency)}>{`${

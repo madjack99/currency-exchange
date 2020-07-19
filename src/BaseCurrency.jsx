@@ -21,7 +21,6 @@ const BaseCurrency = () => {
 
   const handleChange = (e) => {
     dispatch(setBaseCurrency(e.target.value));
-    console.log(e.target.value);
   };
 
   return (

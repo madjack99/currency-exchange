@@ -8,7 +8,6 @@ export const getExchangeRate = (url) => {
   return async (dispatch) => {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
     dispatch({
       type: GET_EXCHANGE_RATE,
       payload: data.rates,

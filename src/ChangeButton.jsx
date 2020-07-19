@@ -22,7 +22,6 @@ const ChangeButton = () => {
       ','
     )}`;
     dispatch(getExchangeRate(targetUrl));
-    console.log(targetUrl);
   };
 
   return (
