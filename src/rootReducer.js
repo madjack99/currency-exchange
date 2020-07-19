@@ -2,7 +2,7 @@ import {
   GET_EXCHANGE_RATE,
   SET_BASE_CURRENCY,
   SET_TARGET_CURRENCY,
-} from './actionTypes';
+} from './actions/actionTypes';
 
 const initState = {
   baseCurrency: null,
@@ -11,7 +11,7 @@ const initState = {
 };
 
 export default (state = initState, action) => {
-  switch (action.payload) {
+  switch (action.type) {
     case SET_BASE_CURRENCY:
       return {
         ...state,

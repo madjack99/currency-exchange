@@ -1,15 +1,21 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+
 import Header from './Header';
 import Footer from './Footer';
 import Exchange from './Exchange';
 
+import { store } from './store';
+
 function App() {
   return (
-    <div>
-      <Header />
-      <Exchange />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Header />
+        <Exchange />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
