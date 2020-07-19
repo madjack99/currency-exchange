@@ -1,7 +1,12 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { currencyList, currencyMap } from './config';
+import { setBaseCurrency } from './actions/actions';
 
 const BaseCurrency = () => {
+  const dispatch = useDispatch();
+  const { baseCurrency } = useSelector((state) => state);
+
   const displayOption = () => {
     return currencyList.map((currency) => {
       return (
@@ -13,6 +18,7 @@ const BaseCurrency = () => {
   };
 
   const handleChange = (e) => {
+    dispatch(setBaseCurrency(e.target.value));
     console.log(e.target.value);
   };
 
@@ -21,9 +27,13 @@ const BaseCurrency = () => {
       Please, select base currency
       <form>
         <select name='base-currency' id='' onChange={handleChange}>
+          <option>Choose currency</option>
           {displayOption()}
         </select>
       </form>
+      <ul>
+        <li>{baseCurrency}</li>
+      </ul>
     </div>
   );
 };
