@@ -1,12 +1,15 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTargetCurrency } from './actions/actions';
 import { currencyList, currencyMap } from './config';
 
 const TargetCurrency = () => {
-  const [currencies, setCurrencies] = React.useState([]);
+  const dispatch = useDispatch();
+  const { targetCurrencyArr } = useSelector((state) => state);
 
   const displayOption = () => {
     const currencyListWithoutSelected = currencyList.filter(
-      (currency) => !currencies.includes(currency)
+      (currency) => !targetCurrencyArr.includes(currency)
     );
     return currencyListWithoutSelected.map((currency) => {
       return (
@@ -18,21 +21,21 @@ const TargetCurrency = () => {
   };
 
   const handleChange = (e) => {
-    setCurrencies([...currencies, e.target.value]);
+    dispatch(setTargetCurrency([...targetCurrencyArr, e.target.value]));
   };
 
   const deleteCurrency = (deletedCurrency) => () => {
     console.log('delete');
-    const filteredCurrencies = currencies.filter(
+    const filteredCurrencies = targetCurrencyArr.filter(
       (currency) => currency !== deletedCurrency
     );
-    setCurrencies(filteredCurrencies);
+    dispatch(setTargetCurrency(filteredCurrencies));
   };
 
   const displaySelectedCurrencies = () => {
-    if (currencies.length) {
-      console.log(currencies);
-      return currencies.map((currency) => {
+    if (targetCurrencyArr.length) {
+      console.log(targetCurrencyArr);
+      return targetCurrencyArr.map((currency) => {
         return (
           <li
             key={currency}
