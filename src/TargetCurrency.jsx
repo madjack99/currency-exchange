@@ -5,7 +5,7 @@ import { currencyList, currencyMap } from './config';
 
 const TargetCurrency = () => {
   const dispatch = useDispatch();
-  const { targetCurrencyArr } = useSelector((state) => state);
+  const { targetCurrencyArr, exchangeRate } = useSelector((state) => state);
 
   const displayOption = () => {
     const currencyListWithoutSelected = currencyList.filter(
@@ -37,10 +37,11 @@ const TargetCurrency = () => {
       console.log(targetCurrencyArr);
       return targetCurrencyArr.map((currency) => {
         return (
-          <li
-            key={currency}
-            onClick={deleteCurrency(currency)}
-          >{`${currencyMap[currency]}, ${currency}`}</li>
+          <li key={currency} onClick={deleteCurrency(currency)}>{`${
+            currencyMap[currency]
+          }, ${currency}: ${
+            exchangeRate[currency] ? exchangeRate[currency].toFixed(3) : ''
+          }`}</li>
         );
       });
     } else {
